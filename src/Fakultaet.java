@@ -1,4 +1,4 @@
-public class Fakultät {
+public class Fakultaet {
     public static void main(String[] args) {
         for (int i = 0; i < 25;i++){
             System.out.println(fak(i));
