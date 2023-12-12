@@ -11,7 +11,7 @@ public class Polymorphismus {
     }
 
     public static void bootFahren(Boot boot) {
-        System.out.println(boot.fahren());
+        System.out.println(boot);
     }
 }
 
@@ -31,8 +31,9 @@ class Boot {
     Schwimmkoerper schwimmKoerper;
     Boolean angelegt = true;
 
-    public String fahren() {
-        return ("Wir fahren übern See.");
+    @Override
+    public String toString() {
+        return "Wir fahren übern See.";
     }
 
     public Boolean anlegen() {
@@ -55,7 +56,7 @@ class SegelBoot extends Boot {
     Segel[] segel;
 
     @Override
-    public String fahren() {
+    public String toString() {
         return "Wir segeln übern See.";
     }
 }
@@ -64,7 +65,7 @@ class MotorBoot extends Boot {
     Motor motor;
 
     @Override
-    public String fahren() {
+    public String toString() {
         return "Wir tuckern übern See.";
     }
 }

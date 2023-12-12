@@ -26,7 +26,7 @@ class Euro {
 }
 */
 
-
+/*
 public class Gleichheit {
     public static void main(String[] args) {
         String a = new String("Alphabet");
@@ -37,4 +37,26 @@ public class Gleichheit {
         System.out.println(a.equals(b));
         System.out.println(b == c);
     }
+}
+*/
+
+public class Gleichheit {
+    public static void main(String[] args) {
+        String a  = "ABC";
+
+        String b = a;
+
+        String c = a + "DEF";
+
+        a += "DEF";
+
+        System.out.println(a);
+        System.out.println(b);
+        System.out.println(c);
+
+        System.out.println(a == b);
+        System.out.println(a == c);
+        System.out.println(a.equals(c));
+    }
+
 }
