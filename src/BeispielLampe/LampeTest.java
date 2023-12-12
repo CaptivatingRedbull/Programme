@@ -10,6 +10,7 @@ public class LampeTest {
             for(int j = 0; i < 10; i++)
                 lampenLaden[i].dimmen(true);
             System.out.println(lampenLaden[i]);
+
         }
     }
 }

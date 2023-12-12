@@ -33,8 +33,7 @@ public class Lampe {
 
     @Override
     public String toString() {
-        final String s = this + (this.helligkeit.lumen) + (this.schaltZustand) + (this.leuchtmittel.leuchtmittel);
-        return s;
+        return this +  (this.helligkeit.lumen) + (this.schaltZustand) + (this.leuchtmittel.leuchtmittel);
     }
 
     public void print (Lampe lampe){
