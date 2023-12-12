@@ -8,22 +8,30 @@ public class Vererbung {
         System.out.println(a.doubleValue());
         System.out.println(b.doppelterWert());
     }
-    public static void print(Basis b){
+
+    public static void print(Basis b) {
         System.out.println(b.doubleValue());
     }
-    public static void print (B obj){
+
+    public static void print(B obj) {
         System.out.println(obj.doppelterWert());
     }
 }
 
 class Basis {
     protected int value;
-    public Basis (int value){
+
+    public Basis(int value) {
         this.value = value;
     }
 
     protected int doubleValue() {
         return value * 2;
+    }
+
+    @Override
+    public String toString() {
+        return "Basis";
     }
 }
 
@@ -32,19 +40,29 @@ class A extends Basis {
     public A(int value) {
         super(value);
     }
-    public A(){
+
+    public A() {
         this(10);
     }
 
+    @Override
+    public String toString() {
+        return "A";
+    }
 }
 
-class B extends Basis {
+class B extends A {
 
     public B(int wert) {
         super(wert);
     }
 
-    public int doppelterWert(){
+    public int doppelterWert() {
         return doubleValue();
+    }
+
+    @Override
+    public String toString() {
+        return (super.toString());
     }
 }
