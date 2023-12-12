@@ -31,6 +31,12 @@ public class Lampe {
             helligkeit.lumen--;
     }
 
+    @Override
+    public String toString() {
+        final String s = this + (this.helligkeit.lumen) + (this.schaltZustand) + (this.leuchtmittel.leuchtmittel);
+        return s;
+    }
+
     public void print (Lampe lampe){
         System.out.println(lampe);
         System.out.println(lampe.helligkeit.lumen);

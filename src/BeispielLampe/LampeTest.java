@@ -1,15 +1,15 @@
 package BeispielLampe;
 
+import java.util.concurrent.LinkedTransferQueue;
+
 public class LampeTest {
     public static void main(String[] args) {
-        Lampe lampe = new Lampe(new Lumen(1000), new Leuchtmittel("ARGON"));
-        Lampe ledLampe = new Lampe();
+        Lampe[] lampenLaden = {new Lampe(new Lumen(1000), new Leuchtmittel("ARGON")), new Lampe(), new Lampe()};
 
-        lampe.einschalten();
-
-        for(int i = 0; i < 10; i++)
-            lampe.dimmen(false);
-        
-        lampe.print(lampe);
+        for (int i = 0; i < lampenLaden.length; i++){
+            for(int j = 0; i < 10; i++)
+                lampenLaden[i].dimmen(true);
+            System.out.println(lampenLaden[i]);
+        }
     }
 }
