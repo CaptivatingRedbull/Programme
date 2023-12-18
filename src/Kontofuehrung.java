@@ -4,6 +4,15 @@ public class Kontofuehrung {
         SparKonto sparKonto = new SparKonto("5500328876101", 0.03F);
         System.out.println(giroKonto);
         System.out.println(sparKonto);
+
+        test(giroKonto);
+        test(sparKonto);
+    }
+
+    public static void test(Konto konto){
+        System.out.println(konto.kennung());
+        konto.einzahlen(100);
+        System.out.println(konto);
     }
 }
 
@@ -25,6 +34,7 @@ abstract class Konto {
 
     abstract String kennung();
 
+    abstract boolean abheben(float betrag);
 
     @Override
     public String toString() {
@@ -41,7 +51,6 @@ class SparKonto extends Konto {
     public SparKonto(String ktonummer, float zins) {
         super(ktonummer);
         this.zins = zins;
-
     }
 
     String kennung() {
@@ -50,6 +59,14 @@ class SparKonto extends Konto {
 
     void annualZins() {
         ktoStand += ktoStand * zins;
+    }
+
+    boolean abheben(float betrag){
+        zins = 0;
+        if (ktoStand <= betrag || betrag <= 0)
+            return false;
+        ktoStand -= betrag;
+        return true;
     }
 
     @Override
@@ -75,7 +92,7 @@ class GiroKonto extends Konto {
     }
 
     boolean abheben(float betrag) {
-        if (ktoStand + dispo < betrag || betrag <= 0)
+        if (ktoStand + dispo <= betrag || betrag <= 0)
             return false;
         ktoStand -= betrag;
         return true;
